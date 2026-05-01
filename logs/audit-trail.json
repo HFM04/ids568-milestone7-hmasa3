@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-04-29T00:00:00Z",
+    "event_type": "project_initialized",
+    "model": "Ollama llama3.1",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "source": "data/final_paper.docx",
+    "scope_rule": "Answer only from source paper; otherwise return Not found in source."
+  }
+]

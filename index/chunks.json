@@ -1,0 +1,266 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Agentic Decision Support for Warehouse Inbound Congestion\n\nUniversity of Illinois Chicago\n\nAbstract. Warehouse operations often rely on reactive decision-making, which can lead to dock congestion, long truck wait times, and unbalanced workloads. This paper proposes a multi-agent decision support system that integrates predictive modeling, optimization, and simulation to improve inbound warehouse operations. The system uses a predictive model to estimate and balance workloads across zones. A discrete-event simulation with 500 Monte Carlo runs is used to evaluate system performance under realistic conditions. Results show significant improvement across key performance indicators, including a 47% reduction in carrier wait times and a 38% decrease in inbound-to-putaway cycle time. Workload bal",
+    "source": "final_paper.docx",
+    "char_start": 0,
+    "char_end": 800,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 1,
+    "text": "ators, including a 47% reduction in carrier wait times and a 38% decrease in inbound-to-putaway cycle time. Workload balance and dock utilization also improved. These findings demonstrate that combining prediction, optimization, and simulation within a coordinated agent framework can enhance operational efficiency while supporting human decision-making in warehouse environments.\n\n1. Introduction\n\nWith the continuous advancement of technology and the increasingly rapid iteration of artificial intelligence, the demand for applying AI in industry is growing, especially in the supply chain environment. Currently, warehouse operations face high throughput, stringent service requirements, and significant operational volatility. In modern retail and consumer product warehousing, inbound operation",
+    "source": "final_paper.docx",
+    "char_start": 680,
+    "char_end": 1480,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 2,
+    "text": "quirements, and significant operational volatility. In modern retail and consumer product warehousing, inbound operations, such as dock scheduling and task execution planning, still rely heavily on human judgment and subsequent coordination and management. This approach can easily lead to dock congestion, increased truck waiting times, downstream task backlogs, and instability in workflows between different warehouse zones. However, existing research on warehouse systems has mostly approached these issues from a machine learning perspective, focusing primarily on predicting predefined outcomes rather than proactively generating coordinated operational recommendations. In addition, current warehouse operating systems often treat dock scheduling and downstream task prioritization as separate",
+    "source": "final_paper.docx",
+    "char_start": 1360,
+    "char_end": 2160,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 3,
+    "text": "addition, current warehouse operating systems often treat dock scheduling and downstream task prioritization as separate problems. Therefore, this project aims to address these challenges by applying an agentic AI system. The proposed system is able to continuously monitor inbound conditions, detect congestion risks, evaluate the impact on downstream operations, and further provide explainable recommendations for dock rescheduling and task prioritization. The value of this approach lies in viewing warehouse operations as an interconnected system, where inbound scheduling and execution-level workload balancing must be coordinated together rather than handled independently. In addition, this project emphasizes the explainability of recommendations, the quantification of KPI impacts, and the",
+    "source": "final_paper.docx",
+    "char_start": 2040,
+    "char_end": 2840,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 4,
+    "text": "In addition, this project emphasizes the explainability of recommendations, the quantification of KPI impacts, and the necessity of human oversight.\n\n2. Literature Review\n\nWarehouse and distribution systems have long been discussed in supply chain research because their daily operations involve multiple decisions related to resource allocation, time scheduling, process coordination, and service levels. However, as supply chain and warehouse operating environments become increasingly complex, how supply chain managers can make effective decisions under highly dynamic and uncertain conditions has become an important issue in warehouse management research. Zeng et al. (2024) pointed out that warehouse operations are inherently dynamic and stochastic systems. In practice, managers often rely",
+    "source": "final_paper.docx",
+    "char_start": 2720,
+    "char_end": 3520,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 5,
+    "text": ") pointed out that warehouse operations are inherently dynamic and stochastic systems. In practice, managers often rely on mathematical analytical models when making decisions; however, the large number of variables within the system and the complexity of practical considerations often limit the effectiveness of such decision-making approaches. Therefore, they proposed a hybrid simulation framework that combines Discrete Event Simulation (DES) and Agent-Based Simulation (ABS) to more realistically model warehouse scheduling and decision-making processes. This perspective is similar to our project, because the inbound congestion problem we examine is not simply a scheduling optimization issue. Rather, it is a cross-process dynamic decision problem involving dock congestion, truck waiting ti",
+    "source": "final_paper.docx",
+    "char_start": 3400,
+    "char_end": 4200,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 6,
+    "text": "g optimization issue. Rather, it is a cross-process dynamic decision problem involving dock congestion, truck waiting time, downstream task backlogs, and workload imbalance across different zones.\n\n2.1 Predictive and Optimization Approaches in Warehouse Operations\n\nIn the existing literature, methods related to warehouse operations can generally be divided into two categories. The first category consists of predictive analytical approaches, such as using machine learning to forecast delays, waiting times, or congestion risks. The second category focuses on optimization methods (Gracia et al., 2025). Aylak (2025) pointed out that although traditional AI has been widely applied in supply chain management for demand forecasting, logistics optimization, and inventory control, these models most",
+    "source": "final_paper.docx",
+    "char_start": 4080,
+    "char_end": 4880,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 7,
+    "text": "lied in supply chain management for demand forecasting, logistics optimization, and inventory control, these models mostly operate on isolated problems and lack the ability to holistically understand and dynamically adjust to multiple interdependent decision scenarios. Sarioguz (2025) reinforces this limitation from an empirical standpoint, demonstrating that conventional warehouse system consistently fail at task assignment and real-time adaptability. This is the same operational failure that our project addresses. Importantly, Sarioguz (2025) also documents that deploying agentic AI in warehouse settings produce improvements such as 35.6% reduction in order picking time and 91.2% to 98.6% improvement in inventory accuracy. In other words, while traditional AI can improve specific local t",
+    "source": "final_paper.docx",
+    "char_start": 4760,
+    "char_end": 5560,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 8,
+    "text": "and 91.2% to 98.6% improvement in inventory accuracy. In other words, while traditional AI can improve specific local tasks, it may not be sufficient to address the interdependent decisions commonly found in supply chain and warehouse operations.\n\n2.2 Multi-Agent Coordination in Supply Chain and Warehouse Systems\n\nAs a result, recent studies have shifted attention from isolated AI tasks toward multi-agent approaches that emphasize coordination and interaction. From the perspective of supply chain consensus-seeking, Jannelli et al. (2025) argued that the difficulty of supply chain decision-making lies not only in optimization within a single firm, but also in how multiple actors communicate, coordinate, and reach aligned actions in order to avoid suboptimal system-level outcomes. Their stu",
+    "source": "final_paper.docx",
+    "char_start": 5440,
+    "char_end": 6240,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 9,
+    "text": "actors communicate, coordinate, and reach aligned actions in order to avoid suboptimal system-level outcomes. Their study further suggested that LLM agents and multi-agent frameworks have the potential to support this kind of cross-role, cross-decision-node coordination process. This supports the argument of our project: when decisions involve partial observability, local goals, and system-wide consequences, a single model is often insufficient, and a multi-agent decision framework with communication, coordination, and consensus-building capabilities is needed. This also serves as the theoretical basis for combining an orchestrator, a dock scheduling agent, and a task prioritization agent in this study.\n\nKrnjaic et al. (2024) also supported this idea by using warehouse order-picking as an",
+    "source": "final_paper.docx",
+    "char_start": 6120,
+    "char_end": 6920,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 10,
+    "text": "ioritization agent in this study.\n\nKrnjaic et al. (2024) also supported this idea by using warehouse order-picking as an example. They showed that human workers, robots, and task assignments in warehouse operations inherently form a typical multi-agent coordination problem. Compared with traditional heuristic methods, multi-agent reinforcement learning (MARL) can more flexibly adapt to different warehouse layouts, role combinations, and operational requirements, while learning more effective collaborative strategies in complex environments (Krnjaic et al., 2024).\n\n2.3 Agentic AI Architecture and Human-in-the-Loop Design\n\nIn addition, Sapkota et al. (2026) and Hosseini and Seilani (2025) both provided theoretical grounding for the architectural choices of this project. Sapkota et al. (2026)",
+    "source": "final_paper.docx",
+    "char_start": 6800,
+    "char_end": 7600,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 11,
+    "text": "Seilani (2025) both provided theoretical grounding for the architectural choices of this project. Sapkota et al. (2026) provided a clear distinction between AI agents and agentic AI. Their study explained that traditional AI agents are usually single entities that use tools and sequential reasoning to perform specific tasks, whereas agentic AI represents a higher-level architectural shift that emphasizes multi-agent collaboration, dynamic task decomposition, persistent memory, and coordinated autonomy. Hosseini and Seilani (2025) complement this by identifying six core characteristics that define agentic systems: autonomy, goal-oriented behavior, environmental interaction, learning capacity, workflow optimization, and multi-agent collaboration. By introducing a Copilot-to-Autopilot framew",
+    "source": "final_paper.docx",
+    "char_start": 7480,
+    "char_end": 8280,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 12,
+    "text": "n, learning capacity, workflow optimization, and multi-agent collaboration. By introducing a Copilot-to-Autopilot framework that describes the progression from human-assisted AI towards full autonomy. Importantly, they identify the Copilot stage, in which AI makes recommendations and requires human approval before execution, as the appropriate initial stage for building organizational trust in agentic systems. Both perspectives are consistent with the goal of our project. Our project does not aim to build an AI model that only performs point predictions, nor is it simply a rule-based scheduler. Instead, it aims to design an agentic decision support system that can coordinate decisions across inbound scheduling and task prioritization.\n\n2.4 Research Gap\n\nIn summary, existing studies have se",
+    "source": "final_paper.docx",
+    "char_start": 8160,
+    "char_end": 8960,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 13,
+    "text": "ate decisions across inbound scheduling and task prioritization.\n\n2.4 Research Gap\n\nIn summary, existing studies have separately discussed warehouse simulation, multi-agent coordination in supply chains, multi-agent warehouse logistics, and the conceptual architecture of agentic AI. However, a clear research gap still remains relatively few studies have integrated warehouse inbound congestion detection, downstream task reprioritization, simulation-based validation, explainable recommendations, and human oversight within a single framework. Therefore, our project focuses on a supervised hybrid multi-agent decision support system that combines predictive modeling, optimization, simulation, and human-in-the-loop supervision to address the interconnected problem of warehouse inbound congestion",
+    "source": "final_paper.docx",
+    "char_start": 8840,
+    "char_end": 9640,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 14,
+    "text": "ion, simulation, and human-in-the-loop supervision to address the interconnected problem of warehouse inbound congestion and downstream task backlog.\n\n3. Methodology\n\n3.1 Overview\n\nThis paper proposes an agentic AI approach to Warehouse Agent System (WAS) to optimize warehouse operations. This section covers the data, architecture, analytical techniques, and the evaluation framework of the WAS. Two key challenges are addressed: dock congestion and task prioritization. To solve this problem, we introduced two interacting agents that work sequentially and share information.\n\nThe pipeline of the system is illustrated in a process flow in Figure 1. The orchestrator runs the two agents sequentially; Agent 1 predicts congestion and recommends rescheduling, and Agent 2 optimizes task allocation a",
+    "source": "final_paper.docx",
+    "char_start": 9520,
+    "char_end": 10320,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 15,
+    "text": "wo agents sequentially; Agent 1 predicts congestion and recommends rescheduling, and Agent 2 optimizes task allocation across warehouse zones. Their outputs are validated using a simulation engine built in SimPy, with 500 Monte Carlo runs to make these improvements consistent with real-world scenarios. All the recommendations require a human approval before any operational change gets executed.\n\nFigure 1. End-to-end process flow of the Warehouse Agent System.\n\n3.2 Data Sources\n\nThis model operates on a synthetic dataset which was developed by analyzing operational patterns of a masked dataset provided by the sponsors. Since real world operational records are commercially sensitive, a synthetic dataset was chosen. The generated dataset contains 89 simulation days over a period of 3 months (",
+    "source": "final_paper.docx",
+    "char_start": 10200,
+    "char_end": 11000,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 16,
+    "text": "sensitive, a synthetic dataset was chosen. The generated dataset contains 89 simulation days over a period of 3 months (random seed = 42 for the base dataset, random seed = 560 for the stress dataset) and is stored in CSV files for the prototype and as a relational database SQLite for deployment mode.\n\nTable 1. Core data schema of the Warehouse Agent System.\n\n3.3 Analytical Techniques\n\nPython 3.11 was used to implement all the logic for both agents. Each agent works in a LLM-augmented mode (Claude Sonnet) and a deterministic rule mode (reference implementation)\n\n3.3.1 Dock Scheduler (Agent 1)\n\nArrival prediction: Expected arrival = scheduled_time + avg_delay × (1 − on_time_rate), using average arrival delay adjusted for likelihood of on-time arrival.\n\nCongestion detection: 60-minute slidin",
+    "source": "final_paper.docx",
+    "char_start": 10880,
+    "char_end": 11680,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 17,
+    "text": "e_rate), using average arrival delay adjusted for likelihood of on-time arrival.\n\nCongestion detection: 60-minute sliding windows (30-min offsets, 06:00–21:00). Occupancy = trucks-in-window ÷ 10 doors. Severity: Low ≤ 0.60, Moderate ≤ 0.80, High ≤ 1.00, Critical > 1.00. High/Critical triggers rescheduling.\n\nMoveability scoring: Additive score σ per appointment: +3 standard, +1 expedited, −5 hot (absolute veto), +2 if on-time rate < 0.65, +1 small, −1 large. Candidates require σ ≥ 3. Target = first later slot with occupancy < 0.50 (first-fit). Max 5 recs per run.\n\n3.3.2 Task Prioritizer (Agent 2)\n\nFor each outstanding task, priority score is calculated as p(t) = 0.40·s_sla + 0.30·s_dwell + 0.20·s_balance + 0.10·s_exc, where:\n\ns_sla (SLA urgency): Step function, based on number of hours to d",
+    "source": "final_paper.docx",
+    "char_start": 11560,
+    "char_end": 12360,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 18,
+    "text": "+ 0.30·s_dwell + 0.20·s_balance + 0.10·s_exc, where:\n\ns_sla (SLA urgency): Step function, based on number of hours to deadline: 1.00 (overdue task), 0.90 (< 2 h), 0.70 (2–4 h), 0.40 (4–8 h), 0.10 (> 8 h).\n\ns_dwell (Dwell time): Step function, based on minutes elapsed since creation: 1.00 (≥ 90), 0.70 (45–89), 0.30 (20–44), 0.10 (< 20).\n\ns_balance (Zone load): min(1, max(0, (L_z − n̄) / (n̄ + 1))). Rewards tasks in overloaded zones; does not penalize underloaded ones.\n\ns_exc (Exception flag): Binary (1 = exception). Low weight—exceptions are handled via isolation, not queue elevation.\n\nException saturation (> 15% of zone queue), Inbound surge (≥ 3 Agent 1 arrivals in same zone hour) and zone imbalance (CV > 0.35) is also considered by Agent 2 with potential for up to 10 recommendations per",
+    "source": "final_paper.docx",
+    "char_start": 12240,
+    "char_end": 13040,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 19,
+    "text": "zone hour) and zone imbalance (CV > 0.35) is also considered by Agent 2 with potential for up to 10 recommendations per run in each of four categories: reprioritization, rebalancing, isolating exceptions, and surge clearance.\n\n3.4 Simulation and KPI Measurement\n\nA SimPy discrete-event simulation simulates the movement of trucks through five steps: arrival (carrier-specific truncated Gaussian delay), check-in (Uniform[5,15] minutes), dock door queue (K = 10 dock doors), changeover (Uniform[8,15] minutes), and unloading (truncated Gaussian, σ = 0.15μ). A Monte Carlo method wrapper (N = 500, noise factor Uniform [0.5,1.5]) results in wait time probability distributions. The scenario comparator has an Adopt classification criterion if mean wait time improvements exceed 5%. Six key performance",
+    "source": "final_paper.docx",
+    "char_start": 12920,
+    "char_end": 13720,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 20,
+    "text": "scenario comparator has an Adopt classification criterion if mean wait time improvements exceed 5%. Six key performance indicators are listed in Table 2.\n\nTable 2. Key performance indicators with baseline and target values.\n\n3.5 Evaluation Method\n\nThe model will be analyzed using the synthetic data and the following five criteria:\n\n• Detection: TPR and FPR of each detection pathway (congestion, imbalance, exceptions, and surges). Criteria: TPR ≥ 0.95; FPR ≤ 0.10.\n\n• Recommendations: Quality (plausibility, actionable, and justification) based on a 3-point rubric.\n\n• Impact simulation: Monte Carlo with N = 500 simulations under baseline, rules, and LLM condition on each stress day. Test: Two-sample Kolmogorov-Smirnov test (α=0.05); effect size: Cohen's d.\n\n• Robustness: Eleven adversarial i",
+    "source": "final_paper.docx",
+    "char_start": 13600,
+    "char_end": 14400,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 21,
+    "text": "ress day. Test: Two-sample Kolmogorov-Smirnov test (α=0.05); effect size: Cohen's d.\n\n• Robustness: Eleven adversarial input categories. Pass criteria: 100% return 4xx status code instead of 5xx codes.\n\n• Usability: Four operators (2 supervisors, 1 analytics manager, and 1 executive) give ratings between 1-7 points on understanding, trust, and adoption on 7-point Likert scale.\n\nThese experimental analyses can be replicated. The experiment will use a seeded pseudo-random number generator, a deterministic rule chain, and specific LLMs models (gpt-4o, claude-sonnet-4-5) used with a temperature of zero. The entire pipeline is executed in less than 10 minutes (Python 3.11; 8GB RAM).\n\n4. Results and Discussion\n\nThe multi agent system was evaluated using the synthetic dataset and simulation descr",
+    "source": "final_paper.docx",
+    "char_start": 14280,
+    "char_end": 15080,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 22,
+    "text": "RAM).\n\n4. Results and Discussion\n\nThe multi agent system was evaluated using the synthetic dataset and simulation described in Section 3.5. The Results focus on two areas: model performance and overall operational impact.\n\n4.1 Model Performance\n\nFor carrier wait time prediction, all models performed similarly, with all models having an  of roughly 0.65. This shows that the dataset captures useful patterns such as arrival delays and carrier behavior. XGBoost performed slightly better than the other models, having the lowest prediction error.\n\nTask dwell time was harder to predict, with  values hovering around 0.39. This suggests that dwell time depends on additional factors not fully included in the dataset, such as labor availability or operational disruptions.\n\n4.2 Operational Impact\n\nTh",
+    "source": "final_paper.docx",
+    "char_start": 14960,
+    "char_end": 15760,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 23,
+    "text": "rs not fully included in the dataset, such as labor availability or operational disruptions.\n\n4.2 Operational Impact\n\nThe main goal of the system is to improve warehouse performance, which was evaluated using key KPIs.\n\nCompared to the baseline system, the agent based approach reduced carrier wait time from 19.5 minutes to 10.3 minutes, a 47% improvement. The inbound to putaway cycle time also decreased 61 minutes to 27.8 minutes, improving overall efficiency.\n\nWorkload balance improved significantly, with the task queue variation dropping from 0.40 to 0.16. This means tasks were distributed more evenly across zones, reducing bottlenecks. Dock Utilization increased from 18% to 23%, showing better use of capacity without congestion. Exception resolution time also improved, dropping from 212",
+    "source": "final_paper.docx",
+    "char_start": 15640,
+    "char_end": 16440,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 24,
+    "text": "8% to 23%, showing better use of capacity without congestion. Exception resolution time also improved, dropping from 212.8 minutes to 85.1 minutes.\n\n4.3 Simulation Validation\n\nTo test reliability, we used SimPy based simulation with 500 Monte Carlo runs. The simulation models truck arrivals, dock usage, and task execution under different conditions.\n\nThe results were consistent across runs. The optimized system maintained lower wait times and better performance compared to the baseline showing that the improvements are stable and not dependent on one specific scenario.\n\n4.4 Discussion\n\nThese results directly address the main problem of reactive warehouse operations. Instead of responding after congestion happens, the system predicts risks and adjusts tasks ahead of time.\n\nCompared to previ",
+    "source": "final_paper.docx",
+    "char_start": 16320,
+    "char_end": 17120,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 25,
+    "text": "ad of responding after congestion happens, the system predicts risks and adjusts tasks ahead of time.\n\nCompared to previous research, which often focuses on either prediction or optimization alone, the system combines both and connects them through a multi agent framework. This allows better coordination between dock scheduling and task prioritization.\n\nOne limitation is the lower accuracy for dwell time prediction, which suggests that more detailed data could improve results. For example, adding SKU level, or labor data could make the system more precise.\n\nOverall, the results show that a multi agent can improve warehouse performance and provide a practical way to support real time decision making.\n\n5. Conclusions\n\nThis study demonstrates the effectiveness of an agentic AI–driven Warehous",
+    "source": "final_paper.docx",
+    "char_start": 17000,
+    "char_end": 17800,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 26,
+    "text": "t real time decision making.\n\n5. Conclusions\n\nThis study demonstrates the effectiveness of an agentic AI–driven Warehouse Agent System (WAS) in addressing the complex and interdependent challenges of inbound congestion and downstream task prioritization. By integrating predictive modeling, rule-based optimization, and coordinated multi-agent decision-making within a unified architecture, the system advances existing approaches that traditionally treat these problems in isolation. The findings show that coupling inbound scheduling with execution-level task prioritization enables a more holistic and proactive operational strategy. Empirical results indicate substantial improvements across key performance indicators, including significant reductions in carrier wait time and inbound-to-putaway",
+    "source": "final_paper.docx",
+    "char_start": 17680,
+    "char_end": 18480,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 27,
+    "text": "ovements across key performance indicators, including significant reductions in carrier wait time and inbound-to-putaway cycle time, along with improved workload balance, increased dock utilization, and faster exception resolution. Simulation validation further confirms that these improvements are consistent and robust across a range of stochastic operating conditions.\n\nBeyond operational gains, this work contributes to the growing body of research on agentic AI by demonstrating how multi-agent systems can coordinate interdependent decisions in dynamic, partially observable environments. Specifically, the study extends prior literature by combining predictive, prescriptive, and simulation-based validation layers within a single decision support framework, while maintaining explainability a",
+    "source": "final_paper.docx",
+    "char_start": 18360,
+    "char_end": 19160,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 28,
+    "text": "e, and simulation-based validation layers within a single decision support framework, while maintaining explainability and human-in-the-loop control. This positions the approach not only as a technical solution, but also as a practical pathway for organizations seeking to adopt AI systems that balance autonomy with oversight.\n\nDespite these contributions, several limitations should be acknowledged. The relatively lower accuracy in task dwell time prediction suggests that important operational factors, such as labor availability, SKU-level variability, and real-time disruptions, are not fully captured in the current dataset. In addition, the reliance on synthetic data, while necessary for confidentiality, may limit the full representation of real-world variability. Future research should fo",
+    "source": "final_paper.docx",
+    "char_start": 19040,
+    "char_end": 19840,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 29,
+    "text": "le necessary for confidentiality, may limit the full representation of real-world variability. Future research should focus on incorporating richer, real-world datasets, expanding feature granularity, and exploring adaptive or learning-based mechanisms to further enhance predictive performance. Additionally, extending the system toward higher levels of autonomy and evaluating its deployment in live warehouse environments would provide valuable insight into scalability and organizational adoption.\n\nFinally, while this study focuses on warehouse inbound operations, the underlying framework has broader applicability to other domains characterized by tightly coupled, real-time decision processes, such as transportation networks, manufacturing systems, and service operations. As such, this rese",
+    "source": "final_paper.docx",
+    "char_start": 19720,
+    "char_end": 20520,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 30,
+    "text": "e decision processes, such as transportation networks, manufacturing systems, and service operations. As such, this research positions agentic AI–based decision support systems as a foundational paradigm for managing complex operational environments, with the potential to significantly enhance coordination, efficiency, and responsiveness across modern supply chains.\n\n6. References\n\n1,Aylak, B. L. (2025). SustAI-SCM: intelligent supply chain process automation with agentic AI for sustainability and cost efficiency. Sustainability, 17(6), 2453.\n\n2. Gracia, M. D., Mar-Ortiz, J., & Vargas, M. (2025). Truck appointment scheduling: A review of models and algorithms. Mathematics, 13(3), 503.\n\n3. Hosseini, S., & Seilani, H. (2025). The role of agentic AI in shaping a smart future: A systematic rev",
+    "source": "final_paper.docx",
+    "char_start": 20400,
+    "char_end": 21200,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 31,
+    "text": ", 13(3), 503.\n\n3. Hosseini, S., & Seilani, H. (2025). The role of agentic AI in shaping a smart future: A systematic review. Array, 26, 100399. https://doi.org/10.1016/j.array.2025.100399\n\n4. Jannelli, V., Schoepf, S., Bickel, M., Netland, T., & Brintrup, A. (2026). Agentic LLMs in the supply chain: towards autonomous multi-agent consensus-seeking. International Journal of Production Research, 1–31.\n\n5. Krnjaic, A., Steleac, R. D., Thomas, J. D., Papoudakis, G., Schäfer, L., To, A. W. K., ... & Albrecht, S. V. (2024, October). Scalable multi-agent reinforcement learning for warehouse logistics with robotic and human co-workers. In 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 677–684). IEEE.\n\n6. Sapkota, R., Roumeliotis, K. I., & Karkee, M. (2025). AI",
+    "source": "final_paper.docx",
+    "char_start": 21080,
+    "char_end": 21880,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  },
+  {
+    "chunk_id": 32,
+    "text": "Intelligent Robots and Systems (IROS) (pp. 677–684). IEEE.\n\n6. Sapkota, R., Roumeliotis, K. I., & Karkee, M. (2025). AI agents vs. agentic AI: A conceptual taxonomy, applications and challenges. Information Fusion, 103599.\n\n7. Sarioguz, O. (2025). The impact of agentic Artificial Intelligence on warehouse and delivery operations in modern logistics. International Journal of Science and Research Archive, 15(3), 1549–1561. https://doi.org/10.30574/ijsra.2025.15.3.1934\n\n8. Zeng, Y., Li, W., & Li, C. (2024). A dynamic simulation framework based on hybrid modeling paradigm for parallel scheduling systems in warehouses. Simulation Modelling Practice and Theory, 133, 102921.",
+    "source": "final_paper.docx",
+    "char_start": 21760,
+    "char_end": 22437,
+    "source_sha256": "1a9f251d1822b7b63ca8cd23c17f91fe2938367da314c7e23aedd4d862565040"
+  }
+]
